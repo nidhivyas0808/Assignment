@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign-UP</title>
+<link rel="stylesheet" href="sign.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="sign-up-form">
+<img src="icon.png">
+<h1>SIGN-UP NOW</h1>
+<form method="POST" id="signup_form" >
+<input type="name" id="name" class="input-box" placeholder="Your Name" required />
+<input type="email" id="email" class="input-box" placeholder="Your Email" required />
+       
+        <input type="password" id="password" class="input-box" placeholder="Create password" required />
+  	<input type="password" id="confirm_pwd" class="input-box" placeholder="Confirm Password" required />
+        <p><span><input type="checkbox" required /></span>I Agree with the Terms and Condition
+		</p>
+		<button type="submit" class="sign-btn" onclick="hello()">Sign-UP</button>
+		<p>Sign-up with</p>
+		<!--Style Social Media Buttons -->
+
+<!-- Add font awesome icons -->
+<a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-google"></a>
+<a href="#" class="fa fa-linkedin"></a><br><br>
+		<p class="or">OR<br>
+		</p>
+		<p>Do You Have Account?<a href="login.html"><b><u>Log-in</b></u></a></p>
+      </form>
+	</div>
+	<script>  
+function hello(){  
+alert("Please enter the required field");  
+}  
+       var name=document.getElementById('name').value;
+	   var contact=document.getElementById('email').value;
+      var email=document.getElementById('password').value;
+	  var enquiry_subject=document.getElementById('confirm_pwd').value;
+	  
+	         if(!name){
+         alert('Please enter name');
+      }else if(!email){
+         alert('Please enter email');
+      }else if(!validateEmail(email)){
+         alert("Please enter validate email");
+	  }
+	  else if(!password){
+         alert("Please enter password");
+		}
+		else if(!confirm_pwd){
+         alert("Please enter password");
+		}
+		else{
+         document.getElementById("signup_form").submit(); 
+      }
+   }
+   function validateEmail(email) {
+      const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+   }
+</script>  
+</body>
+</html>
